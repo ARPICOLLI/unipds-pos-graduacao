@@ -12,7 +12,6 @@ public class ContaBancaria {
         this.titular = titular;
 
 
-
     }
 
     public double getSaldo() {
@@ -26,11 +25,11 @@ public class ContaBancaria {
     public boolean debitar(double valor) {
         if (this.saldo >= valor) {
             this.saldo -= valor;
-            System.out.println("Valor de R$ " + valor + " debitado de sua conta, seu saldo atual é de R$ " + this.saldo);
+           // System.out.println("Valor de R$ " + valor + " debitado de sua conta, seu saldo atual é de R$ " + this.saldo);
 
             return true;
         } else {
-            System.out.println("Saldo insuficiente, R$ " + this.saldo);
+          //  System.out.println("Saldo insuficiente, R$ " + this.saldo);
             return false;
         }
 
@@ -56,7 +55,7 @@ public class ContaBancaria {
     public String toString() {
         return "ContaBancaria{" +
                 "numero=" + numero +
-                ", titular='" + titular  +
+                ", titular='" + titular +
                 ", saldo=" + saldo +
                 '}';
     }
