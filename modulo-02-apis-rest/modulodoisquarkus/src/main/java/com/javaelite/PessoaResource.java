@@ -1,6 +1,7 @@
 package com.javaelite;
 
 
+import io.micrometer.core.annotation.Counted;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -18,6 +19,7 @@ public class PessoaResource {
 
     }
     @GET
+    @Counted(value = "counted.getPessoa")
     @Path("anoNascimento")
     public List<Pessoa> findByAnoNascimento(@QueryParam("anoNascimento")int anoNascimento) {
         return Pessoa.findByAnoNascimento(anoNascimento);
